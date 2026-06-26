@@ -78,7 +78,7 @@ pub async fn extract_audio(
         "--newline".to_string(),  // 强制每行刷新
         "--restrict-filenames".to_string(),  // 将特殊字符替换为下划线，避免 [ ] 等字符导致文件操作失败
         "--user-agent".to_string(),
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36".to_string(),
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36".to_string(),
         "--referer".to_string(),
         "https://www.bilibili.com".to_string(),
     ];
@@ -280,7 +280,7 @@ pub async fn download_audio(
         "--no-playlist".to_string(),
         "--newline".to_string(),
         "--user-agent".to_string(),
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36".to_string(),
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36".to_string(),
         "--referer".to_string(),
         "https://www.bilibili.com".to_string(),
     ];
