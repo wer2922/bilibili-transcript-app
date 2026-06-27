@@ -1,5 +1,5 @@
 // Bilibili Transcript App - Tauri 入口
-// macOS 原生应用，支持 B站视频转录、字幕获取、Whisper 语音转文字
+// Windows 原生应用，支持 B站视频转录、字幕获取、Whisper 语音转文字
 
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 #![allow(dead_code)]
