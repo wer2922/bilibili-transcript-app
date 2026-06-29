@@ -7,6 +7,7 @@ import {
   clearTaskHistory,
   getTaskOutputDir,
   openFolder,
+  openFile,
   onTaskProgress,
   onTaskCompleted,
   type TaskRecord,
@@ -123,6 +124,14 @@ function TaskPanel({ taskType, title, icon }: TaskPanelProps) {
     }
   };
 
+  const handleOpenFile = async (path: string) => {
+    try {
+      await openFile(path);
+    } catch (err) {
+      setToast({ message: `打开文件失败: ${err}`, type: "error" });
+    }
+  };
+
   const statusIcon = (status: string) => {
     switch (status) {
       case "completed": return "✅";
@@ -228,6 +237,15 @@ function TaskPanel({ taskType, title, icon }: TaskPanelProps) {
                   <span className={`task-history-badge ${statusBadgeClass(task.status)}`}>
                     {statusText(task.status)}
                   </span>
+                  {task.status === "completed" && task.output_path && (
+                    <button
+                      className="task-history-open"
+                      onClick={() => handleOpenFile(task.output_path!)}
+                      title="打开文件"
+                    >
+                      📂
+                    </button>
+                  )}
                   <button
                     className="task-history-delete"
                     onClick={() => handleDelete(task.id)}

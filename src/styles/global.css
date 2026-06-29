@@ -1105,6 +1105,23 @@ body {
   background: var(--accent-light);
 }
 
+.task-history-open {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s ease;
+  opacity: 0.5;
+}
+
+.task-history-open:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
 .task-history-delete {
   background: none;
   border: none;

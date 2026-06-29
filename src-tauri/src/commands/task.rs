@@ -119,6 +119,18 @@ pub async fn open_folder(app: AppHandle, path: String) -> Result<(), String> {
     Ok(())
 }
 
+/// 打开文件
+#[command]
+#[allow(deprecated)]
+pub async fn open_file(app: AppHandle, path: String) -> Result<(), String> {
+    let p = std::path::Path::new(&path);
+    if !p.exists() {
+        return Err(format!("文件不存在: {}", path));
+    }
+    app.shell().open(&path, None).map_err(|e| e.to_string())?;
+    Ok(())
+}
+
 /// 获取应用数据目录路径 (~/.bilibili-transcript/)
 #[command]
 pub async fn get_app_data_dir() -> Result<String, String> {

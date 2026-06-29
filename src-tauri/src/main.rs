@@ -73,6 +73,7 @@ fn main() {
             commands::task::clear_task_history,
             commands::task::get_task_output_dir,
             commands::task::open_folder,
+            commands::task::open_file,
             commands::task::get_app_data_dir,
         ])
         .run(tauri::generate_context!())
